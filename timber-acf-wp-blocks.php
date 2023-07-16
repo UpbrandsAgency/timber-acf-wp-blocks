@@ -98,8 +98,7 @@ if ( ! class_exists( 'Timber_Acf_Wp_Blocks' ) ) {
 					// Keywords exploding with quotes.
 					$keywords = str_getcsv( $file_headers['keywords'], ' ', '"' );
 
-					$controller_path = STYLESHEETPATH . '/app/BlockControllers/' . $file_headers['callback'] . '.php';
-					$class = BlockControllerInterface::class;
+					$controller_path = STYLESHEETPATH . '/BlockControllers' . '/' . $file_headers['callback'] . '.php';
 					// Search if render callback is available, else use default
 					if( $file_headers['callback'] == '' || ! file_exists( $controller_path ) ) {
 						$callback = array( __CLASS__, 'timber_blocks_callback' );
